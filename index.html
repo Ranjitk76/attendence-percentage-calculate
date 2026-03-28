@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance Calculator</title>
+<style>
+body{
+font-family: Arial;
+text-align:center;
+margin-top:50px;
+}
+input{
+padding:10px;
+margin:10px;
+}
+button{
+padding:10px 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Attendance Percentage Calculator</h2>
+
+<input type="number" id="total" placeholder="Total Classes"><br>
+<input type="number" id="attended" placeholder="Classes Attended"><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+function calculate(){
+let total = document.getElementById("total").value;
+let attended = document.getElementById("attended").value;
+
+let percentage = (attended/total)*100;
+
+document.getElementById("result").innerHTML =
+"Attendance: " + percentage.toFixed(2) + "%";
+}
+</script>
+
+</body>
+</html>
