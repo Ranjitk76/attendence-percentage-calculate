@@ -1,16 +1,28 @@
-# Attendance Percentage Calculator
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Calculator</title>
+</head>
+<body>
+  <h2>Attendance Calculator</h2>
 
-This is a simple Attendance Percentage Calculator.
+  Total Classes: <input type="number" id="total"><br><br>
+  Attended Classes: <input type="number" id="attended"><br><br>
 
-Features:
-- Calculate attendance percentage
-- Simple UI
-- Easy to use
+  <button onclick="calculate()">Calculate</button>
 
-Technologies Used:
-- HTML
-- CSS
-- JavaScript
+  <h3 id="result"></h3>
 
-Author:
-Ranjit kumar
+  <script>
+    function calculate() {
+      let total = document.getElementById("total").value;
+      let attended = document.getElementById("attended").value;
+
+      let percentage = (attended / total) * 100;
+
+      document.getElementById("result").innerText =
+        "Attendance: " + percentage.toFixed(2) + "%";
+    }
+  </script>
+</body>
+</html>
